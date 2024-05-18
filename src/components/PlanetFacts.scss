@@ -1,0 +1,57 @@
+@import '../utils/mixins.scss';
+
+.planet {
+  &__facts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 28px;
+    gap: 8px;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: center;
+      gap: 11px;
+    }
+
+    @include on-desktop {
+      gap: 30px;
+      margin-top: 0;
+    }
+  }
+
+  &__fact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 24px;
+
+    @include on-tablet {
+      flex-direction: column;
+      padding: 16px;
+      min-width: 164px;
+      align-items: start;
+    }
+
+    &-name {
+      color: rgba(255, 255, 255, 0.5);
+      font-family:
+        League Spartan,
+        sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 0.727px;
+      text-transform: uppercase;
+    }
+
+    &-value {
+      color: #fff;
+      font-family: Antonio, sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: -0.75px;
+      text-transform: uppercase;
+    }
+  }
+}

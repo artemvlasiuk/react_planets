@@ -1,0 +1,56 @@
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin header-font-xl {
+  color: #fff;
+  font-family: Antonio, sans-serif;
+  font-size: 80px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@mixin header-font-l {
+  color: #fff;
+  font-family: Antonio, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+@mixin header-font-m {
+  color: #fff;
+  font-family: Spartan, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 2.571px;
+  text-transform: uppercase;
+}
+
+@mixin header-font-s {
+  color: #fff;
+  font-family: Spartan, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin body-font {
+  color: #fff;
+  font-family: Spartan, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+}
