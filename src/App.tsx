@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
 import { getAllPlanets } from './api/api';
-import { Planet } from './types/Planet';
-import { loadContent } from './components/helpers';
+import { Planet as PlanetType } from './types/Planet';
 import { PlanetFacts } from './components/PlanetFacts';
 import { Header } from './components/Header';
+import { Planet } from './components/Planet';
+import { Menu } from './components/Menu';
 
 export const App = () => {
-  const [planets, setplanets] = useState<Planet[]>([]);
-  const [selectedPlanet, setSelectedPlanet] = useState<Planet | null>(null);
+  const [planets, setplanets] = useState<PlanetType[]>([]);
+  const [selectedPlanet, setSelectedPlanet] = useState<PlanetType | null>(null);
   const [activeTab, setActiveTab] = useState('overview');
+
+  const selectPlanetHandler = (planet: PlanetType) => {
+    setSelectedPlanet(planet);
+    setActiveTab('overview');
+  };
 
   useEffect(() => {
     getAllPlanets().then(planetsFromApi => {
@@ -18,74 +24,17 @@ export const App = () => {
     });
   }, []);
 
-  let content, source, image;
-
-  if (selectedPlanet) {
-    [content, source, image] = loadContent(activeTab, selectedPlanet);
-  } else {
-    content = source = image = null;
-  }
-
   return (
     <div className="container">
-      <Header planets={planets} setSelectedPlanet={setSelectedPlanet} />
+      <Header planets={planets} setSelectedPlanet={selectPlanetHandler} />
 
-      <section className="planet">
-        <div className="tabs">
-          <div className="tab" onClick={() => setActiveTab('overview')}>
-            <div className="tab__number">01</div>
-            Overview
-          </div>
-          <div className="tab" onClick={() => setActiveTab('structure')}>
-            <div className="tab__number">02</div>
-            Structure
-          </div>
-          <div className="tab" onClick={() => setActiveTab('surface')}>
-            <div className="tab__number">03</div>
-            Surface
-          </div>
-        </div>
+      <Menu planets={planets} selectPlanetHandler={selectPlanetHandler} />
 
-        <div className="planet__image">
-          <img
-            src={image || undefined}
-            className={`planet__image--${selectedPlanet?.name.toLowerCase()}`}
-            alt="Planet image"
-          />
-          {activeTab === 'surface' && (
-            <img
-              src={selectedPlanet?.images.geology}
-              className="planet__image--surface"
-              alt="Surface Image"
-            />
-          )}
-        </div>
-
-        <div className="planet__desktop">
-          <div className="planet__content">
-            <div className="planet__name">{selectedPlanet?.name}</div>
-            <p className="planet__summary">{content}</p>
-            <a href={source || undefined} className="planet__wiki-link">
-              Source: <span>Wikipedia</span>
-            </a>
-          </div>
-
-          <div className="tabs tabs--desktop">
-            <div className="tab" onClick={() => setActiveTab('overview')}>
-              <div className="tab__number">01</div>
-              Overview
-            </div>
-            <div className="tab" onClick={() => setActiveTab('structure')}>
-              <div className="tab__number">02</div>
-              Structure
-            </div>
-            <div className="tab" onClick={() => setActiveTab('surface')}>
-              <div className="tab__number">03</div>
-              Surface
-            </div>
-          </div>
-        </div>
-      </section>
+      <Planet
+        selectedPlanet={selectedPlanet}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
 
       <PlanetFacts selectedPlanet={selectedPlanet} />
     </div>

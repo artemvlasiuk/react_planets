@@ -1,8 +1,10 @@
-$mercury-color: #DEF4FC;
-$venus-color: #F7CC7F;
-$earth-color: #545BFE;
-$mars-color: #FF6A45;
-$jupiter-color: #ECAD7A;
-$saturn-color: #FCCB6B;
-$uranus-color: #65F0D5;
-$neptune-color: #497EFA;
+:root {
+  --mercury-color: #def4fc;
+  --venus-color: #f7cc7f;
+  --earth-color: #545bfe;
+  --mars-color: #ff6a45;
+  --jupiter-color: #ecad7a;
+  --saturn-color: #fccb6b;
+  --uranus-color: #65f0d5;
+  --neptune-color: #497efa;
+}

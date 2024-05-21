@@ -3,7 +3,6 @@
 .header {
   display: flex;
   height: 70px;
-  padding-inline: 24px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -11,7 +10,6 @@
   @include on-tablet {
     flex-direction: column;
     height: 160px;
-    padding-inline: 50px;
     justify-content: center;
     gap: 40px;
   }
@@ -31,7 +29,7 @@
     text-transform: uppercase;
   }
 
-  &__menu {
+  &__nav {
     display: none;
 
     @include on-tablet {

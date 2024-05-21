@@ -11,22 +11,24 @@ export const Header: React.FC<HeaderProps> = ({
   setSelectedPlanet,
 }) => {
   return (
-    <div className="header">
-      <a className="header__logo">the planets</a>
-      <nav className="header__menu">
-        <ul className="header__menu-list">
-          {planets.map(element => (
-            <li
-              className="header__menu-item"
-              key={element.name}
-              onClick={() => setSelectedPlanet(element)}
-            >
-              {element.name}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <a href="" className="header__menu-btn"></a>
-    </div>
+    <>
+      <div className="header">
+        <a className="header__logo">the planets</a>
+        <nav className="header__nav">
+          <ul className="header__nav-list">
+            {planets.map(element => (
+              <li
+                className="header__nav-item"
+                key={element.name}
+                onClick={() => setSelectedPlanet(element)}
+              >
+                {element.name}
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <a href="#menu" className="header__nav-btn"></a>
+      </div>
+    </>
   );
 };

@@ -1,0 +1,74 @@
+@import '../utils/mixins.scss';
+
+.tabs {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  @include on-tablet {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    flex-direction: column;
+    border: none;
+    gap: 16px;
+    padding: 0;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &--desktop {
+    display: none;
+    @include on-desktop {
+      display: flex;
+      margin-top: 39px;
+    }
+  }
+}
+
+.tab {
+  color: #fff;
+  font-family:
+    League Spartan,
+    sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.929px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include on-tablet {
+    display: flex;
+    gap: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    line-height: 25px;
+    width: 100%;
+
+    &:hover {
+      border: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__number {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      color: rgba(255, 255, 255, 0.5);
+      font-family:
+        League Spartan,
+        sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 25px;
+      letter-spacing: 1.929px;
+      text-transform: uppercase;
+    }
+  }
+}
