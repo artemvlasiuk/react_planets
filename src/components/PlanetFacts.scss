@@ -12,11 +12,6 @@
       justify-content: center;
       gap: 11px;
     }
-
-    @include on-desktop {
-      gap: 30px;
-      margin-top: 0;
-    }
   }
 
   &__fact {
@@ -29,8 +24,13 @@
     @include on-tablet {
       flex-direction: column;
       padding: 16px;
-      min-width: 164px;
+      width: 164px;
       align-items: start;
+    }
+
+    @include on-desktop {
+      padding: 20px;
+      width: 255px;
     }
 
     &-name {
@@ -43,6 +43,10 @@
       line-height: 16px;
       letter-spacing: 0.727px;
       text-transform: uppercase;
+
+      @include on-desktop {
+        font-size: 11px;
+      }
     }
 
     &-value {
@@ -52,6 +56,14 @@
       font-weight: 400;
       letter-spacing: -0.75px;
       text-transform: uppercase;
+
+      @include on-tablet {
+        font-size: 24px;
+      }
+
+      @include on-desktop {
+        font-size: 40px;
+      }
     }
   }
 }

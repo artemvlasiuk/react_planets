@@ -187,6 +187,11 @@
 
     @include on-tablet {
       text-align: left;
+      font-size: 48px;
+    }
+
+    @include on-desktop {
+      font-size: 80px;
     }
   }
 
@@ -203,6 +208,11 @@
 
     @include on-tablet {
       text-align: left;
+    }
+
+    @include on-desktop {
+      font-size: 14px;
+      line-height: 25px;
     }
   }
 
@@ -222,7 +232,11 @@
     text-decoration: none;
 
     @include on-tablet {
-      text-align: left;
+      justify-content: flex-start;
+    }
+
+    @include on-desktop {
+      margin-top: 24px;
     }
 
     span {

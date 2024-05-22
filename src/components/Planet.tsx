@@ -25,7 +25,7 @@ export const Planet: React.FC<PlanetProps> = ({
 
   return (
     <section className="planet">
-      <Tabs setActiveTab={setActiveTab} />
+      <Tabs setActiveTab={setActiveTab} activeTab={activeTab} />
 
       <div className="planet__image">
         <img
@@ -57,7 +57,7 @@ export const Planet: React.FC<PlanetProps> = ({
           </a>
         </div>
 
-        <TabsDesktop setActiveTab={setActiveTab} />
+        <TabsDesktop setActiveTab={setActiveTab} activeTab={activeTab} />
       </div>
     </section>
   );
