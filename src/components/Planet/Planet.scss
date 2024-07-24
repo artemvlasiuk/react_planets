@@ -1,4 +1,4 @@
-@import '../utils/mixins.scss';
+@import '../../utils/mixins.scss';
 
 .planet {
   display: grid;
@@ -255,6 +255,6 @@
   &__wiki-icon {
     width: 12px;
     height: 12px;
-    background-image: url('../../public//assets/icon-source.svg');
+    background-image: url('../../../public/assets/icon-source.svg');
   }
 }

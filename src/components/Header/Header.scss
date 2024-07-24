@@ -1,4 +1,4 @@
-@import '../utils/mixins.scss';
+@import '../../utils/mixins.scss';
 
 .header {
   display: flex;
@@ -39,7 +39,7 @@
     &-btn {
       width: 24px;
       height: 17px;
-      background-image: url('../../public/assets/icon-hamburger.svg');
+      background-image: url('../../../public/assets/icon-hamburger.svg');
 
       @include on-tablet {
         display: none;

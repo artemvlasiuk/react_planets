@@ -1,4 +1,4 @@
-import { Planet } from '../types/Planet';
+import { Planet } from '../../types/Planet';
 import './PlanetFacts.scss';
 
 interface PlanetFactsProps {

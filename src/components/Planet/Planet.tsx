@@ -1,8 +1,8 @@
 import './Planet.scss';
-import { Planet as PlanetType } from '../types/Planet';
-import { Tabs } from './Tabs';
-import { TabsDesktop } from './TabsDesktop';
-import { loadContent } from './helpers';
+import { Planet as PlanetType } from '../../types/Planet';
+import { Tabs } from '../Tabs/Tabs';
+import { TabsDesktop } from '../Tabs/TabsDesktop';
+import { loadContent } from '../helpers';
 
 interface PlanetProps {
   selectedPlanet: PlanetType | null;

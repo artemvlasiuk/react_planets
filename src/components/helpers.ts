@@ -24,3 +24,23 @@ export const loadContent = (tab: string, planet: Planet) => {
       return [];
   }
 };
+
+export const saveSelectedPlanetToLocalStorage = (
+  selectedPlanet: Planet | null,
+) => {
+  if (selectedPlanet) {
+    localStorage.setItem('selectedPlanet', JSON.stringify(selectedPlanet));
+  } else {
+    localStorage.removeItem('selectedPlanet');
+  }
+};
+
+export const loadSelectedPlanetFromLocalStorage = () => {
+  const storedPlanet = localStorage.getItem('selectedPlanet');
+
+  if (storedPlanet) {
+    return JSON.parse(storedPlanet) as Planet;
+  }
+
+  return null;
+};
